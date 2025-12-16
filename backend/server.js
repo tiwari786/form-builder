@@ -3,7 +3,7 @@ const dotenv = require("dotenv")
 const connectDB = require("./config/db")
 const formRouter = require("./routes/formRouter")
 const responseRouter = require("./routes/responseRouter")
-const cors  = require("cors")
+const cors = require("cors")
 dotenv.config()
 
 
@@ -12,9 +12,9 @@ dotenv.config()
 const server = express()
 server.use(express.json())
 
-server.use(cors({ 
-  origin: "http://localhost:5173" || process.env.FRONTEND_VITE_URL,
-  methods: ["GET", "POST", "PUT", "DELETE"],
+server.use(cors({
+    origin: ["http://localhost:5173", process.env.FRONTEND_VITE_URL],
+    methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 
 server.use("/api/form", formRouter)
