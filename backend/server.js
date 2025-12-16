@@ -13,7 +13,7 @@ const server = express()
 server.use(express.json())
 
 server.use(cors({ 
-  origin: "http://localhost:5173",
+  origin: "http://localhost:5173" || process.env.FRONTEND_VITE_URL,
   methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function FormBuilder({onSaved }) {
   const [title, setTitle] = useState("");
   const [fields, setFields] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const addField = () => {
     setFields((prev) => [
